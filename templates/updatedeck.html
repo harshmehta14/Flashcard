@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Deck Name</title>
+
+
+<style>
+a:link, a:visited, button{
+  background-color: #f44336;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+body  
+{  
+    background-color:#fecdcb;  
+    font-family: 'Arial';  
+}  
+.login{  
+        width: 382px;  
+        overflow: hidden;  
+        margin: auto;  
+        margin: 20 0 0 450px;  
+        padding: 80px;  
+        background: #9dcbff;          
+}  
+h1{  
+    text-align: center;  
+    color: black;  
+    padding: 20px;  
+}  
+label{  
+    color: black;  
+    font-size: 20px;  
+}  
+#Uname{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+}     
+a{  
+    float: left;  
+    background-color: grey;  
+} 
+</style>
+</head>
+
+<body>    
+    <h1>Update Deck Name</h1>    
+    <div class="login">    
+    <form action="/updatedeck/{{deckname}}" method="post">    
+        <label for=""><b>Current Deck Name</b></label>    
+        <input type="text" name="current" value="{{deckname}}" id= "Uname" readonly>
+        <br><br>    
+        <label><b>New Deck Name</b></label>    
+        <input type="text" name="new" id= "Uname" placeholder = "New Deck Name">   
+        <br><br>    
+        <button type="submit" value="Update">Update</button><br></br>
+         <a href="/index">Go back</a>
+   </form>     
+</div>    
+</body> 
+</html>

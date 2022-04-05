@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Deck</title>
+
+<style>
+a:link, a:visited , button{
+  background-color: #f44336;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+body  
+{  
+    background-color: #fecdcb;  
+    font-family: 'Arial';  
+}  
+.login{  
+        width: 382px;  
+        overflow: hidden;  
+        margin: auto;   
+        padding: 80px;  
+        background: #9dcbff;           
+}  
+h1{  
+    text-align: center;  
+    color: black;  
+    padding: 20px;  
+}  
+label{  
+    color: black;  
+    font-size: 22px;  
+}  
+#Uname{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+}  
+</style>
+</head>
+
+<body>    
+    <h1>Create a New Deck</h1>   
+    <div class="login">    
+    <form action="/createdeck" method="post">    
+        <b><label for="">Enter Deck Name</label></b>    <br></br> 
+        <input type="text" name="deckname" id ="Uname" placeholder= "Enter Deck Name" >
+        <br><br>    
+	<button type="submit" value="Submit">Add</button><br></br>
+        <a href="/index">Go back</a>
+    <br><br>
+    </form>     
+</div>    
+</body>
+</html>

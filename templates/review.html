@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review</title>
+    <style>
+h1{
+    font-family: Georgia ;
+    color: white;
+} 
+body{
+    background-color: #fecdcb ;
+}
+#ans{
+    display: none;
+} 
+
+#card{ 
+    width: 350px; 
+    border: 2px solid black;
+    background: #9dcbff;
+    padding: 10px;
+    margin: 5px;
+}       
+input[type="radio"] {
+  display: grid;
+}
+
+input[type="radio"]:focus {
+  outline: max(2px, 0.15em) solid currentColor;
+  outline-offset: max(2px, 0.15em);
+}
+
+a:link, a:visited, button{
+  background-color: #f44336;
+  color: white;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+label{  
+    color: black;  
+    font-size: 20px;  
+} 
+</style>
+</head>
+
+
+<body>
+   <center>
+    <div id="card">
+        <h2>Your Flashcard</h2> 
+        <h1>{{rows[3]}}</h1>
+        <input type="button" value="Show Answer" onclick="show()">
+        <h1 id="ans"; color: blue>{{rows[4]}}</h1>
+    </div>
+
+    <br><br>
+
+    <form action="/review/{{deckname}}" , method ='post'>
+        <label for=""><b>Select Difficulty: </b></label>
+    	<br><br>
+
+        <input type="radio" name="option" value="easy"required>
+        <label for=""><i>Easy</i></label>
+    	<br></br>
+
+        <input type="radio" name="option" value="medium">     
+        <label for=""><i>Medium</i></label>
+    	<br></br>
+
+        <input type="radio" name="option" value="hard">    
+        <label for=""><i>Hard</i></label>
+        <br></br>
+
+       <button type="submit" value="Submit_Response">Submit</button>
+       <br></br>
+    </form>
+    <hr>
+    <button ><a href="/addcard/{{deckname}}">Add Card</a></button>
+    <br></br>
+    <button><a href="/index">Go home</a></button>
+    <script>
+        function show(){
+            document.getElementById("ans").style.display="block"
+        }
+    </script>
+   </center>
+</body>
+</html>

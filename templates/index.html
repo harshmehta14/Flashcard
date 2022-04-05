@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+<style>
+body  {   
+    background-color: #fecdcb;  
+    font-family: 'Arial';  
+}  
+
+h1{  
+    text-align: center;  
+    color: black;  
+    padding: 30px;  
+}  
+ 
+table {
+    background-color: #fecdcb;
+    border: 2px solid white;
+    border-collapse: collapse;
+    
+}
+        
+a:link, a:visited {
+    background-color: grey;
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display:inline-block;
+}  
+
+a:hover, a:active {
+    background-color: red;
+}
+
+td ,th, tr{
+    text-align: center;
+    height: 50px;
+}
+    
+</style>    
+</head>
+
+<body> 
+<center>   
+
+    <div class="">    
+	<h1>Deck Management </h1>
+    <table class="center" >
+        <tr>
+            <th>Deck Review</th>
+            <th>Action</th>
+            <th>Created on</th>
+            <th>{{username}}'s Total Score</th>
+        </tr>
+
+        {% for row in rows %}
+	<form >
+        <tr>
+            <td ><a href="/review/{{row[0]}}">{{row[0]}}</a></td>
+            <td >
+                <a href="/deletedeck/{{row[0]}}">Delete</a>
+                <a href="/updatedeck/{{row[0]}}">Update</a> 
+                <a href="/addcard/{{row[0]}}">Add a Card</a><br></br>
+		  {% for deckname in card %}
+		  {% if deckname !=[]%}
+                  {% if row[0]==deckname[0] %}
+		<a href="/deletecard/{{deckname[1]}}">Delete Card - "{{deckname[1]}}"</a><br></br>	
+                   {% endif %}  
+		   {% endif %}    
+		   {% endfor %}
+	   </td>
+		{% for name in created_on %}
+                {% if  row[0]== name[0] %}
+	    <td><p style="color:black" >{{name[1]}}</p></td>
+        	 {% endif%}
+		 {% endfor %}
+                 {% endfor %}
+	    <td><p style="color:black">{{score}}</p></td>
+        </tr>
+	</form>            
+    </table>
+  <br><br>
+  <a href="/createdeck">Add Deck</a>
+  <br><br>
+  <a href="/logout">Logout</a>
+
+</div>    
+</body> 
+</center>
+</html>
+
+
+
+   

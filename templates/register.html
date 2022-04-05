@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+<style>
+a:link, a:visited ,button {
+  background-color: #f44336;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+
+body  
+{  
+    background-color:#fecdcb;  
+    font-family: 'Arial';  
+}  
+.login{  
+        width: 382px;  
+        overflow: hidden;  
+        margin: auto;  
+        margin: 20 0 0 450px;  
+        padding: 80px;  
+        background: #9dcbff;        
+}  
+h1{  
+    text-align: center;  
+    color: black;  
+    padding: 20px;  
+}  
+label{  
+    color: black;  
+    font-size: 22px; 
+    
+}  
+#Uname{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+}  
+#Pass{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;       
+}  
+ 
+</style>
+</head>
+
+<body>    
+    <h1>Registration</h1>    
+    <div class="login">    
+    <form action="/register" method="post">    
+        <label for=""><b>Enter your Name     
+        </b>   
+        </label>    
+        <input type="text" name="name" id="Uname" required placeholder="Full Name">    
+        <br><br>    
+       <label for=""><b>Enter a Username  
+        </b>    
+        </label>    
+        <input type="text" name="username" id="Uname" required placeholder="Full Name">    
+        <br><br> 
+        <label><b>Create a Password    
+        </br>    
+        </label>    
+        <input type="password" name="password" required id="Pass" placeholder="Password">  
+        <br><br>    
+        <button type="submit" value="Register">Sign up</button>
+    </form>     
+</div>    
+</body> 
+</html>
